@@ -28,10 +28,10 @@
 		      	</div>
 						<form method="POST" action="verificaSenha.php" class="login-form">
 		      		<div class="form-group">
-		      			<input value="login" name="login" type="text" class="form-control rounded-left" placeholder="Username" required>
+		      			<input name="login" type="text" class="form-control rounded-left" placeholder="Username" required>
 		      		</div>
 	            <div class="form-group d-flex">
-	              <input value="senha" name="senha" type="password" class="form-control rounded-left" placeholder="Password" required>
+	              <input name="senha" type="password" class="form-control rounded-left" placeholder="Password" required>
 	            </div>
 	            <div class="form-group d-md-flex">
 	            	<div class="w-50">

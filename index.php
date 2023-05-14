@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>ASSOSIAÇÃO</title>
+        <title>CARLINHOS SANTOS</title>
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
@@ -14,7 +14,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
             <div class="container px-4">
-                <a class="navbar-brand" href="#page-top">ASSOSIAÇÃO</a>
+                <a class="navbar-brand" href="#page-top">UNIDADE MÉDICA CARLINHOS SANTOS</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
@@ -27,11 +27,12 @@
             </div>
         </nav>
         <!-- Header-->
-        <header class="bg-primary bg-gradient text-white">
+        <header class="img bg-primary bg-gradient text-white">
+            <!--<img src="assets/header.jpg">-->
             <div class="container px-4 text-center">
-                <h1 class="fw-bolder">BEM VINDO</h1>
-                <p class="lead">Site oficial da assosiação para contato e duvidas</p>
-                <a class="btn btn-lg btn-light" href="#about">CONHECER!</a>
+                <h1 class="fw-bolder nome-central">BEM VINDO</h1>
+                <p class="lead nome-meio">Site oficial da assosiação para contato e duvidas</p>
+                <a class="btn btn-lg btn-light nome-final" href="#about">CONHECER!</a>
             </div>
         </header>
         <!-- About section-->
@@ -39,13 +40,11 @@
             <div class="container px-4">
                 <div class="row gx-4 justify-content-center">
                     <div class="col-lg-8">
-                        <h2>About this page</h2>
-                        <p class="lead">This is a great place to talk about your webpage. This template is purposefully unstyled so you can use it as a boilerplate or starting point for you own landing page designs! This template features:</p>
+                        <h2>SOBRE</h2>
+                        <p class="lead">ADICIONAR O SOBRE AQUI</p>
                         <ul>
-                            <li>Clickable nav links that smooth scroll to page sections</li>
-                            <li>Responsive behavior when clicking nav links perfect for a one page website</li>
-                            <li>Bootstrap's scrollspy feature which highlights which section of the page you're on in the navbar</li>
-                            <li>Minimal custom CSS so you are free to explore your own unique design options</li>
+                            <li>LINHA 1</li>
+                            <li>LINHA 2</li>
                         </ul>
                     </div>
                 </div>
@@ -56,8 +55,8 @@
             <div class="container px-4">
                 <div class="row gx-4 justify-content-center">
                     <div class="col-lg-8">
-                        <h2>Services we offer</h2>
-                        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut optio velit inventore, expedita quo laboriosam possimus ea consequatur vitae, doloribus consequuntur ex. Nemo assumenda laborum vel, labore ut velit dignissimos.</p>
+                        <h2>SERVIÇOS</h2>
+                        <p class="lead">ADICIONAR OS SERVIÇOS AQUI</p>
                     </div>
                 </div>
             </div>
@@ -67,15 +66,15 @@
             <div class="container px-4">
                 <div class="row gx-4 justify-content-center">
                     <div class="col-lg-8">
-                        <h2>Contact us</h2>
-                        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero odio fugiat voluptatem dolor, provident officiis, id iusto! Obcaecati incidunt, qui nihil beatae magnam et repudiandae ipsa exercitationem, in, quo totam.</p>
+                        <h2>CONTATO</h2>
+                        <p class="lead">ADICIONAR O CONTATO AQUI</p>
                     </div>
                 </div>
             </div>
         </section>
         <!-- Footer-->
         <footer class="py-5 bg-dark">
-            <div class="container px-4"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p></div>
+            <div class="container px-4"><p class="m-0 text-center text-white">Copyright &copy; Assosiação Carlinhos Santos 2023</p></div>
         </footer>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>

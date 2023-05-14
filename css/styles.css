@@ -641,6 +641,24 @@ progress {
   margin-left: auto;
 }
 
+.img bg-primary{
+  width: 200px;
+  margin: auto;
+}
+
+.nome-central img{
+width: 100%;
+}
+
+.nome-meio img{
+
+
+}
+
+.nome-final img{
+
+}
+
 @media (min-width: 576px) {
   .container-sm, .container {
     max-width: 540px;
