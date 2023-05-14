@@ -1,3 +1,7 @@
+<?php
+include_once('config/conexao.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
