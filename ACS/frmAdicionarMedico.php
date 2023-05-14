@@ -81,7 +81,7 @@ include_once('../config/conexao.php');
 	            	<div class="w-50">
 								</div>
 	            </div>
-	            <div class="group">
+	            <div class="form-group">
 	            	<button value="CADASTRO" name="cadastro" type="submit" class="btn btn-primary rounded submit p-3 px-5">Cadastrar</button>
 	            </div>
 	          </form>
