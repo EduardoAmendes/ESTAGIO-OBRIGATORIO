@@ -21,7 +21,8 @@ include_once('config/conexao.php');
             <div class="border-end bg-white" id="sidebar-wrapper">
                 <div class="sidebar-heading border-bottom bg-light">ACS</div>
                 <div class="list-group list-group-flush">
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="ACS/frmMedico.php">Calendário Médico</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="ACS/frmMedico.php">Médico</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="ACS/frmAgendaMedico.php">Agenda Médico</a>
                 </div>
             </div>
             <!-- Page content wrapper-->

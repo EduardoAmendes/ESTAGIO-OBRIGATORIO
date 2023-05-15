@@ -22,8 +22,8 @@ include_once('../config/conexao.php');
                 <div class="sidebar-heading border-bottom bg-light">ACS</div>
                 <div class="list-group list-group-flush">
                 <a class="list-group-item list-group-item-action list-group-item-light p-3" href="../backend.php">Inicio</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="frmAdicionarMedico.php">Adicionar Médico</a>
-                 <!--   <a class="list-group-item list-group-item-action list-group-item-light p-3" href="frmMedico.php">Médico</a> -->
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="frmAdicionarAgendaMedico.php">Adicionar Agenda Médico</a>
+                    <!--<a class="list-group-item list-group-item-action list-group-item-light p-3" href="frmInsertAgenda.php">Médico</a>-->
 
                 </div>
             </div>
@@ -46,33 +46,26 @@ include_once('../config/conexao.php');
 
                 <!--<div class="container px-4 text-center bg-primary bg-gradient text-white">-->
                 <div class="container-fluid">
-                <span id="queryMedico"></span>
+                <span id="queryMedicoAgenda"></span>
                 <table class="container bg-gradient bg-primary px-4" border = 1>
                 <tr style="border-color: black">
-                    <th>ID</th>
                     <th>NOME</th>
-                    <th>FUNÇÃO</th>
-                    <th>CRM</th>
-                    <th>CRN</th>
-                    <th>UF</th>
-                    <th></th>
+                    <th>DATA</th>
+                    <th>HORA</th>
                 </tr>
 
                     <?php
                     //consultar no banco de dados
                     $verifica = mysqli_query($mysqli_connection, 
-                    "SELECT * FROM tblMEDICO ORDER BY NOME_MEDICO") ;
+                    "SELECT * FROM tblAGENDA ORDER BY DATA_AGENDAMENTO DESC") ;
 
                     //Verificar se encontrou resultado na tabela "usuarios"
                     if(($verifica ) AND ($verifica->num_rows != 0)){
                         while($row_usuario = mysqli_fetch_assoc($verifica)){
                             echo '<tr>';
-                            echo '<th class="bg-gradient">'. $row_usuario['ID'] .'</th>';
-                            echo '<td class="bg-gradient">'. $row_usuario['NOME_MEDICO'] .'</td>';
-                            echo '<td class="bg-gradient">'. $row_usuario['FUNCAO_MEDICO'] .'</td>';
-                            echo '<td class="bg-gradient">'. $row_usuario['CRM_MEDICO'] .'</td>';
-                            echo '<td class="bg-gradient">'. $row_usuario['CRN_MEDICO'] .'</td>';
-                            echo '<td class="bg-gradient">'. $row_usuario['CRM_MEDICO_UF'] .'</td>';
+                            echo '<th class="bg-gradient">'. $row_usuario['NOME_MEDICO'] .'</th>';
+                            echo '<td class="bg-gradient">'. $row_usuario['DATA_AGENDAMENTO'] .'</td>';
+                            echo '<td class="bg-gradient">'. $row_usuario['HORA_AGENDAMENTO'] .'</td>';
                             echo '<td></td>';
                             echo '</tr>';
                         }
@@ -80,6 +73,9 @@ include_once('../config/conexao.php');
                         echo "Nenhum usuário encontrado";
                     }
                     ?>
+
+
+
                 </div>
             </div>
         </div>

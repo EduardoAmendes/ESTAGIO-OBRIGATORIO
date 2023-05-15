@@ -1,18 +1,23 @@
 <?php
 include_once("../config/conexao.php");
-                    
+             
+    $NOME = $_POST["NOME"];
     $DATA = $_POST["DATA"];
     $HORA = $_POST["HORA"];
-    $FK_ID_MEDICO = $_POST["FK_ID"];
+    //$FK_ID_MEDICO = $_POST["FK_ID"];
 
 
-if (isset($_POST['inserirAgenda'])){
-    $insertMedico = "INSERT INTO tblAGENDA(ID_AGENDAMENTO, DATA_AGENDAMENTO, HORA_AGENDAMENTO, FK_ID) VALUES(
-        NULL, '$DATA', '$HORA', (SELECT ID FROM tblMEDICO WHERE id = '$FK_ID_MEDICO')
+if (isset($_POST['InserirAgenda'])){
+
+    $insertMedico = "INSERT INTO tblAGENDA(ID_AGENDAMENTO, NOME_MEDICO, DATA_AGENDAMENTO, HORA_AGENDAMENTO) VALUES(
+        NULL, '$NOME','$DATA', '$HORA'
     )";
     mysqli_query($mysqli_connection, $insertMedico);
-    echo"<script language='javascript' type='text/javascript'> alert('MEDICO AGENDADO');</script>";
-    header('location:frmAgendaMedico.php') ;                        
+    echo"<script language='javascript' type='text/javascript'> alert('MEDICO AGENDADO') </script>";
+    header('location:frmAgendaMedico.php') ;               
+ } else {
+    echo"<script language='javascript' type='text/javascript'> alert('MEDICO NÃO AGENDADO') </script>";
+    header('location:frmAgendaMedico.php') ;    
  }
                     
 

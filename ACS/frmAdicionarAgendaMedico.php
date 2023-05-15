@@ -22,9 +22,7 @@ include_once('../config/conexao.php');
                 <div class="sidebar-heading border-bottom bg-light">ACS</div>
                 <div class="list-group list-group-flush">
                 <a class="list-group-item list-group-item-action list-group-item-light p-3" href="../backend.php">Inicio</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="frmAdicionarMedico.php">Adicionar Médico</a>
-                 <!--   <a class="list-group-item list-group-item-action list-group-item-light p-3" href="frmMedico.php">Médico</a> -->
-
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="frmAgendaMedico.php">Agenda Médico</a>
                 </div>
             </div>
             <!-- Page content wrapper-->
@@ -43,44 +41,69 @@ include_once('../config/conexao.php');
                     </div>
                 </nav>
                 <!-- Page content-->
+                <section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section"></h2>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-md-6 col-lg-5">
+					<div class="login-wrap p-4 p-md-5">
+		      	<div class="icon d-flex align-items-center justify-content-center">
+		      		<span class="fa fa-user-o"></span>
+		      	</div>
+						<form method="POST" name="" action="frmInsertAgenda.php" class="">
 
-                <!--<div class="container px-4 text-center bg-primary bg-gradient text-white">-->
-                <div class="container-fluid">
-                <span id="queryMedico"></span>
-                <table class="container bg-gradient bg-primary px-4" border = 1>
-                <tr style="border-color: black">
-                    <th>ID</th>
-                    <th>NOME</th>
-                    <th>FUNÇÃO</th>
-                    <th>CRM</th>
-                    <th>CRN</th>
-                    <th>UF</th>
-                    <th></th>
-                </tr>
+		      		<div class="form-group">
+                        Nome:
+                        <?php 
+                            $SQL = "SELECT NOME_MEDICO FROM tblMEDICO";
+                            $QUERY  = mysqli_query($mysqli_connection, $SQL);
+                        
+                        ?>
+                        <select name="NOME" class="form-control rounded-left" placeholder="NOME" required>
 
-                    <?php
-                    //consultar no banco de dados
-                    $verifica = mysqli_query($mysqli_connection, 
-                    "SELECT * FROM tblMEDICO ORDER BY NOME_MEDICO") ;
+                        <?php
 
-                    //Verificar se encontrou resultado na tabela "usuarios"
-                    if(($verifica ) AND ($verifica->num_rows != 0)){
-                        while($row_usuario = mysqli_fetch_assoc($verifica)){
-                            echo '<tr>';
-                            echo '<th class="bg-gradient">'. $row_usuario['ID'] .'</th>';
-                            echo '<td class="bg-gradient">'. $row_usuario['NOME_MEDICO'] .'</td>';
-                            echo '<td class="bg-gradient">'. $row_usuario['FUNCAO_MEDICO'] .'</td>';
-                            echo '<td class="bg-gradient">'. $row_usuario['CRM_MEDICO'] .'</td>';
-                            echo '<td class="bg-gradient">'. $row_usuario['CRN_MEDICO'] .'</td>';
-                            echo '<td class="bg-gradient">'. $row_usuario['CRM_MEDICO_UF'] .'</td>';
-                            echo '<td></td>';
-                            echo '</tr>';
-                        }
-                    }else{
-                        echo "Nenhum usuário encontrado";
-                    }
-                    ?>
-                </div>
+                            while($RESULTADO = mysqli_fetch_array($QUERY)){ 
+                                
+                        ?>
+                        
+
+                        <option value="
+                        <?=  $RESULTADO['NOME_MEDICO'] ?>">
+                        
+                        <?php echo $RESULTADO['NOME_MEDICO']; ?>
+                    </option>
+                  <?php } ?>
+                        </option>
+
+                        </select>
+		      		</div>
+                      Data:
+                      <div class="form-group">
+		      			<input name="DATA" type="date" class="form-control rounded-left" required>
+		      		</div>
+                      Hora:
+                      <div class="form-group">
+		      			<input name="HORA" type="time" class="form-control rounded-left" placeholder="HORA" required>
+		      		</div>
+
+	            <div class="form-group d-md-flex">
+	            	<div class="w-50">
+								</div>
+	            </div>
+	            <div class="form-group">
+	            	<button value="InserirAgenda" name="InserirAgenda" type="submit" class="btn btn-primary rounded submit p-3 px-5">AGENDAR</button>
+	            </div>
+	          </form>
+	        </div>
+				</div>
+			</div>
+		</div>
+	</section>
             </div>
         </div>
         <!-- Bootstrap core JS-->
