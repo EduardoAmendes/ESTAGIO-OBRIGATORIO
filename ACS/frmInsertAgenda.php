@@ -1,5 +1,6 @@
 <?php
-include_once("../config/conexao.php");
+
+include_once('../config/conexao.php');
              
     $NOME = $_POST["NOME"];
     $DATA = $_POST["DATA"];

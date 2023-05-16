@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -26,7 +29,7 @@
 		      	<div class="icon d-flex align-items-center justify-content-center">
 		      		<span class="fa fa-user-o"></span>
 		      	</div>
-						<form method="POST" action="verificaSenha.php" class="login-form">
+						<form method="POST" action="session/verificaSenha.php" class="login-form">
 		      		<div class="form-group">
 		      			<input name="login" type="text" class="form-control rounded-left" placeholder="Username" required>
 		      		</div>

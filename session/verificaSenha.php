@@ -1,5 +1,6 @@
 <?php
-include_once('config/conexao.php');
+session_start();
+include_once('../config/conexao.php');
 
 $login = $_POST["login"];
 $senha = $_POST["senha"];
@@ -20,7 +21,7 @@ if (isset($entrar)) {
         echo"<script language='javascript' type='text/javascript'>
         alert('Login correto');</script>";
         setcookie("login",$login);
-        header("Location:backend.php");
+        header("Location:../backend.php");
       }
     }
 

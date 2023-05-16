@@ -1,5 +1,6 @@
 <?php
-include_once("../config/conexao.php");
+
+include_once('../config/conexao.php');
                     
     $NOME_MEDICO = $_POST["NOME"];
     $FUNCAO_MEDICO = $_POST["FUNCAO"];
