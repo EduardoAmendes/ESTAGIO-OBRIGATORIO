@@ -60,7 +60,7 @@ include_once('../config/conexao.php');
 		      		<div class="form-group">
                         Nome:
                         <?php 
-                            $SQL = "SELECT NOME_MEDICO FROM tblMEDICO";
+                            $SQL = "SELECT NOME_MEDICO FROM tblMEDICO ORDER BY NOME_MEDICO";
                             $QUERY  = mysqli_query($mysqli_connection, $SQL);
                         
                         ?>
