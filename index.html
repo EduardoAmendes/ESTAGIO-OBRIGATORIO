@@ -306,7 +306,7 @@
         </div>
     </div><!-- End Testimonial Section -->
     <!-- Start Emergency Section -->
-<form action="ACS/session/verificaSenha.php">
+<form method="POST" action="ACS/session/verificaSenha.php">
     <div id="loginpopup" class="modal fade" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -317,19 +317,19 @@
                 <div class="modal-body text-center">
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
                         <i class="fa fa-envelope-o"></i>    
-                        <input class="mdl-textfield__input" type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" id="loginpopup-email">
+                        <input class="mdl-textfield__input" name="login" type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" id="loginpopup-email">
                         <label class="mdl-textfield__label" for="loginpopup-email">Digite seu Email <em> *</em></label>
                         <span class="mdl-textfield__error">Coloque um email valido!</span>
                     </div>
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
                         <i class="fa fa-key"></i>
-                        <input class="mdl-textfield__input" type="password" id="loginpopup-password">
+                        <input class="mdl-textfield__input" name="senha" type="password" id="loginpopup-password">
                         <label class="mdl-textfield__label" for="loginpopup-password">Digite sua senha <em> *</em></label>
                         <span class="mdl-textfield__error">Por favor digite uma senha válida</span>
                         <div class="forgot-pass">Perdeu a sua senha?</div>
                     </div>
                     <div class="form-submit">
-                        <a href="ACS/agendamentos.html"><button class="mdl-button mdl-js-button mdl-js-ripple-effect button button-primary">Entrar</button></a>
+                        <a href="ACS/session/verificaSenha.php"><button name="entrar" class="mdl-button mdl-js-button mdl-js-ripple-effect button button-primary">Entrar</button></a>
                     </div>
                     <div class="or-using">Ou use as seguintes redes:</div>
                     <div class="social-login">
