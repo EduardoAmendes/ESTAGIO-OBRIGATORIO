@@ -1,0 +1,6 @@
+****Tecnologias Utilizadas*******
+
+- HTML E CSS E SCSS
+- BOOTSTRAP
+- JAVASCRIPT + JQUERY
+

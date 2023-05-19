@@ -4,24 +4,549 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <!-- Site Title -->
+    <title>ACS</title>
+    <!-- Meta Description Tag -->
+    <meta name="Description" content="Klinik is a HTML5 & CSS3 responsive template">
+    <!-- Favicon Icon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.png" />
+    <!-- Font Awesoeme Stylesheet CSS -->
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" />
+    <!-- Google web Font -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat:400,500">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Material Design Lite Stylesheet CSS -->
+    <link rel="stylesheet" href="css/material.min.css" />
+    <!-- Material Design Select Field Stylesheet CSS -->
+    <link rel="stylesheet" href="css/mdl-selectfield.min.css">
+    <!-- Owl Carousel Stylesheet CSS -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <!-- Animate Stylesheet CSS -->
+    <link rel="stylesheet" href="css/animate.min.css" />
+    <!-- Magnific Popup Stylesheet CSS -->
+    <link rel="stylesheet" href="css/magnific-popup.css" />
+    <!-- Flex Slider Stylesheet CSS -->
+    <link rel="stylesheet" href="css/flexslider.css" />
+    <!-- Custom Main Stylesheet CSS -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header class="header">
-        <a href="'#" class="logo"> <i class= "fas fa-kit-medical"></i> Logo</a>
-        <nav class="navbar">
-            <a href="#">Sobre</a>
-            <a href="#">Servicos</a>
-            <a href="#">Contato</a>
-        </nav>
+    <!-- Start Header -->
+    <header id="header">
+        <!-- Start Header Top Section -->
+        <div id="hdr-top-wrapper">
+            <div class="layer-stretch hdr-top">
+                
+                <div class="hdr-top-line"></div>
+                <div class="hdr-top-block">
+                    <div class="theme-dropdown">
+                        <a id="profile-menu" class="mdl-button mdl-js-button mdl-js-ripple-effect font-13"><i class="fa fa-user-o color-black"></i> LOGIN</a>
+                        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect metarial-menu" data-mdl-for="profile-menu">
+                            <li class="mdl-menu__item"><a data-toggle="modal" data-target="#loginpopup"><i class="fa fa-sign-in"></i>Login</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div><!-- End Header Top Section -->
+        
+    </header><!-- End Header -->
     
-        <a href="#" class="btn">Login</a>
-        <div id="menu-btn" class="fas fa-bars"></div>
+    <!-- Começo da Section do slider -->
+    <div id="slider" class="slider-1">
+        <div class="flexslider slider-wrapper">
+            <ul class="slides">     
+                <li>
+                    <div class="slider-info">
+                        <h1 class="animated fadeInDown">Excelência Médica: Profissionais dedicados ao seu cuidado</h1>
+                        <p class="animated fadeInDown">Qualidade em Serviços de Saúde: Atendimento de primeira linha para o seu bem-estar</p>
+                    </div>
+                    <div class="slider-backgroung-image" style="background-image: url(images/Imagen2.jpg);"></div>
+                    <!-- Make an Appointment  Button -->
+                    <div class="slider-button slider-appointment">
+                        <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect  animated fadeInUp">Saiba mais<i class="fa fa-medkit"></i></a>
+                    </div>
+                </li>
+                <li>
+                    <div class="slider-info">
+                        <h2>Excelência em Saúde: Uma Clínica de Qualidade Reconhecida por seus Pacientes</h2>
+                        <p>Cuidado Personalizado e Feedbacks Positivos: Garantia de Confiança e Satisfação</p>
+                    </div>
+                    <div class="slider-backgroung-image" style="background-image: url(images/imagen3.jpg);"></div>
+                    <!-- Make an Appointment  Button -->
+                    <div class="slider-button">
+                        <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect  animated fadeInUp">Saiba mais<i class="fa fa-medkit"></i></a>
+                    </div>
+                </li>
+                <li>
+                    <div class="slider-info">
+                        <h2>Recepção Acolhedora e Ambiente Organizado: Nosso Compromisso com o seu Bem-Estar</h2>
+                        <p>Profissionais capacitados e bem qualificados para prestação de um atendimento satisfatório</p>
+
+                    </div>
+                    <div class="slider-backgroung-image" style="background-image: url(images/imagen4.jpg);"></div>
+                    <!-- Make an Appointment  Button -->
+                    <div class="slider-button">
+                        <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect  animated fadeInUp">Saiba mais<i class="fa fa-medkit"></i></a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- Finalização do slider -->
+        <!-- Start Service Section -->
+    <div id="hm-service" class="layer-stretch">
+        <div class="layer-wrapper">
+            <div class="layer-ttl">
+                <h3>Serviços</h3>
+            </div>
+            <div class="layer-container">
+                <div class="feature-block feature-block-dark">
+                    <div class="feature-icon"><i class="fa fa-stethoscope"></i></div>
+                    <span>Profissionais Excelentes</span>
+                    <p class="paragraph-small paragraph-white">Na nossa clínica, contamos com uma equipe de profissionais altamente qualificados e dedicados. Nossos médicos, enfermeiros e demais profissionais de saúde possuem vasta experiência e expertise em suas respectivas áreas.</p>
+                </div>
+                <div class="feature-block feature-block-dark">
+                    <div class="feature-icon"><i class="fa fa-calendar"></i></div>
+                    <span>Agendamento online</span>
+                    <p class="paragraph-small paragraph-white">Agende sua consulta a qualquer hora, de qualquer lugar, e deixe-nos cuidar de você da melhor maneira possível. Estamos aqui para ajudá-lo a priorizar sua saúde e bem-estar, com facilidade e conveniência.</p>
+                </div>
+                <div class="feature-block feature-block-dark">
+                    <div class="feature-icon"><i class="fa fa-desktop"></i></div>
+                    <span>Tecnologia</span>
+                    <p class="paragraph-small paragraph-white">Por meio de sistemas avançados de armazenamento e segurança, garantimos a confidencialidade, integridade e disponibilidade das informações médicas.</p>
+                </div>
+            </div>
+        </div>
+    </div><!-- End Service Section -->
+    <!-- Start About Section -->
+    <div id="hm-about" class="parallax-background">
+        <div class="layer-stretch">
+            <div class="layer-wrapper">
+                <div class="layer-ttl layer-ttl-white">
+                    <h3>Quem somos nós?</h3>
+                </div>
+                <div class="row">
+                    <div class="col-md-7">
+                        <div class="hm-about-block">
+                            <div class="tbl-cell hm-about-icon"><i class="fa fa-user-md"></i></div>
+                            <div class="tbl-cell hm-about-number">
+                                <span class="counter">12</span>
+                                <p>Doutores</p>
+                            </div>
+                        </div>
+                        <div class="hm-about-block">
+                            <div class="tbl-cell hm-about-icon"><i class="fa fa-stethoscope"></i></div>
+                            <div class="tbl-cell hm-about-number">
+                                <span class="counter">10</span>
+                                <p>Consultórios</p>
+                            </div>
+                        </div>
+                        <div class="hm-about-block">
+                            <div class="tbl-cell hm-about-icon"><i class="fa fa-calendar"></i></div>
+                            <div class="tbl-cell hm-about-number">
+                                <span class="counter">5</span>
+                                <p>Anos de funcionamento</p>
+                            </div>
+                        </div>
+                        <div class="hm-about-block">
+                            <div class="tbl-cell hm-about-icon"><i class="fa fa-clock-o"></i></div>
+                            <div class="tbl-cell hm-about-number">
+                                <span class="counter">XXX</span>
+                                <p>Aberto x horas por semana</p>
+                            </div>
+                        </div>
+                        <div class="hm-about-paragraph">
+                            <p class="paragraph-medium paragraph-white">
+                                <span class="theme-dropcap color-white"></span>Nossa clínica é sinônimo de qualidade em todos os aspectos. Contamos com uma equipe de profissionais altamente qualificados, formados nas melhores instituições, que possuem um profundo compromisso com o bem-estar e a saúde dos pacientes. Além disso, estamos em constante evolução tecnológica, utilizando as mais avançadas soluções para otimizar o atendimento e proporcionar uma experiência excepcional aos nossos pacientes. Acreditamos que a combinação de profissionais de excelência com a mais recente tecnologia é essencial para oferecer um cuidado médico completo, preciso e personalizado. Estamos comprometidos em proporcionar uma abordagem holística e inovadora, garantindo que cada paciente receba o melhor tratamento possível.
+                            </p> 
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <img class="img-thumbnail" src="images/Imagen2.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- End About Section -->
+        <!-- Start Feature Section -->
+    <div id="hm-feature" class="layer-stretch">
+        <div class="layer-wrapper layer-bottom-10">
+            <div class="layer-ttl">
+                <h3>Algumas de nossas especialidades</h3>
+            </div>
+            <div class="row text-left">
+                <div class="col-md-4">
+                    <div class="department-block department-card">
+                        <div class="tbl-cell department-icon"><i class="fa fa-female"></i></div>
+                        <div class="tbl-cell department-detail">
+                            <h5>Ginecologista</h5>
+                            <p class="paragraph-small paragraph-white">O ginecologista é um profissional altamente qualificado e especializado no cuidado da saúde da mulher. Com expertise em anatomia, fisiologia e doenças do sistema reprodutivo feminino, eles desempenham um papel crucial na prevenção, diagnóstico e tratamento de condições ginecológicas. Além de possuir habilidades clínicas avançadas, os ginecologistas também são empáticos e têm uma abordagem centrada na paciente.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="department-block department-card">
+                        <div class="tbl-cell department-icon"><i class="fa fa-child"></i></div>
+                        <div class="tbl-cell department-detail">
+                            <h5>Pediatra</h5>
+                            <p class="paragraph-small paragraph-white">Resumo: O pediatra é um médico especializado no cuidado e tratamento de crianças desde o nascimento até a adolescência. Com uma abordagem centrada na criança, o pediatra monitora seu crescimento e desenvolvimento, realiza exames físicos, oferece orientações sobre alimentação saudável, imunizações e cuidados preventivos. Além disso, eles diagnosticam e tratam doenças infantis comuns, garantindo o bem-estar e a saúde das crianças. </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="department-block department-card">
+                        <div class="tbl-cell department-icon"><i class="fa fa-eye"></i></div>
+                        <div class="tbl-cell department-detail">
+                            <h5>Oftamologista</h5>
+                            <p class="paragraph-small paragraph-white">O oftalmologista é um médico especializado no diagnóstico, tratamento e prevenção de doenças oculares. Eles cuidam da saúde dos olhos, realizam exames de visão, prescrevem óculos ou lentes de contato, e tratam uma ampla variedade de condições, como catarata, glaucoma, conjuntivite e problemas de retina</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="department-block department-card">
+                        <div class="tbl-cell department-icon"><i class="fa fa-heart"></i></div>
+                        <div class="tbl-cell department-detail">
+                            <h5>Cardiologista</h5>
+                            <p class="paragraph-small paragraph-white">O cardiologista é um médico especializado no coração e no sistema cardiovascular, diagnosticando e tratando doenças cardiovasculares, como doença cardíaca e pressão alta. Eles realizam exames e oferecem tratamentos personalizados para manter a saúde do coração dos pacientes.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="department-block department-card">
+                        <div class="tbl-cell department-icon"><i class="fa fa-upload"></i></div>
+                        <div class="tbl-cell department-detail">
+                            <h5> dentre outros</h5>
+                            <p class="paragraph-small paragraph-white">Entre em contato com a clínica e informe qual médico você precisa, e de acordo com a disponibilidade iremos agendar seu atendimento.</p>
+                        </div>
+                    </div>
+                </div>
     
-    
-    </header>
-    
+            </div>
+        </div>
+    </div><!-- End Feature Section -->
+    <div class="parallax-background parallax-background-2">
+        <div class="layer-stretch">
+            <div class="layer-wrapper">
+                <div class="layer-ttl layer-ttl-white">
+                    <h3>Nossos médicos</h3>
+                </div>
+                <div class="layer-container">
+                    <div id="hm-doctor-slider" class="owl-carousel owl-theme theme-owl-dot">
+                        <div class="hm-doctor">
+                            <img class="img-responsive" src="uploads/slide-doctor-1.jpg" alt="">
+                            <h6>Dr. Daniel </h6>
+                            <p>Ginecologista</p>
+                        </div>
+                        <div class="hm-doctor">
+                            <img class="img-responsive" src="uploads/slide-doctor-2.jpg" alt="">
+                            <h6>Dr. Eduardo</h6>
+                            <p>Oftamologista</p>
+                        </div>
+                        <div class="hm-doctor">
+                            <img class="img-responsive" src="uploads/slide-doctor-3.jpg" alt="">
+                            <h6>Dr. xxxx</h6>
+                            <p>Pediatra</p>
+                        </div>
+                        <div class="hm-doctor">
+                            <img class="img-responsive" src="uploads/slide-doctor-4.jpg" alt="">
+                            <h6>Dra. Amanda</h6>
+                            <p>Nutricionista</p>
+                        </div>
+                        <div class="hm-doctor">
+                            <img class="img-responsive" src="uploads/slide-doctor-5.jpg" alt="">
+                            <h6>Dra. Lais</h6>
+                            <p>Psiquiatra</p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- End Doctor Section -->
+   <br>
+    <!-- Start Testimonial Section -->
+    <div id="testimonial" class="parallax-background parallax-background-4">
+        <div class="layer-stretch">
+            <div class="layer-wrapper">
+                <div class="layer-ttl layer-ttl-white">
+                    <h3>Avaliações de clientes</h3>
+                </div>
+                <div class="layer-container">
+                    <div id="testimonial-slider" class="owl-carousel owl-theme theme-owl-dot">
+                        <div class="testimonial-block">
+                            <img class="img-responsive" src="uploads/testimonial-1.jpg" alt="">
+                            <div class="paragraph-medium">
+                                <i class="fa fa-quote-left"></i>
+                                Fiz minha primeira consulta com o doutor Daniel, adorei, profissional super capacitado e educado. Nota dez!!!
+                                <h3>Marcia Santos B.</h3>
+                            </div>
+                        </div>
+                        <div class="testimonial-block">
+                            <img class="img-responsive" src="uploads/testimonial-2.jpg" alt="">
+                            <div class="paragraph-medium paragraph-red">
+                                <i class="fa fa-quote-left"></i>
+                                Ja sou cliente fiel da clinica, sempre gostei do atendimento prestado pelos médicos, deixo aqui uma ressalva ao Eduardo, profissional excelente, que vem cuidando da minha saúde a mais de 3 anos! Nota MILLL<br>
+                                <h3>Julia A. Souza</h3>
+                            </div>
+
+                        </div>
+                        <div class="testimonial-block">
+                            <img class="img-responsive" src="uploads/testimonial-3.jpg" alt="">
+                            <div class="paragraph-medium paragraph-red">
+                                <i class="fa fa-quote-left"></i>
+                                Consultei pela terceira vez com a doutra Lais, minha Nutricionista que vai me acompanhar durante o processo de emagrecimento. Estou adorando todas nossas sessões e também o resultado gerado. Obrigado!!
+                                <h3>João Victor Alves</h3>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- End Testimonial Section -->
+    <!-- Start Emergency Section -->
+<form action="ACS/session/verificaSenha.php">
+    <div id="loginpopup" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h5 class="modal-title">Entrar</h5>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body text-center">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
+                        <i class="fa fa-envelope-o"></i>    
+                        <input class="mdl-textfield__input" type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" id="loginpopup-email">
+                        <label class="mdl-textfield__label" for="loginpopup-email">Digite seu Email <em> *</em></label>
+                        <span class="mdl-textfield__error">Please Enter Valid Email!</span>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
+                        <i class="fa fa-key"></i>
+                        <input class="mdl-textfield__input" type="password" id="loginpopup-password">
+                        <label class="mdl-textfield__label" for="loginpopup-password">Digite sua senha <em> *</em></label>
+                        <span class="mdl-textfield__error">Por favor digite uma senha válida</span>
+                        <div class="forgot-pass">Perdeu a sua senha?</div>
+                    </div>
+                    <div class="form-submit">
+                        <a href="agendamentos.html"><button class="mdl-button mdl-js-button mdl-js-ripple-effect button button-primary">Entrar</button></a>
+                    </div>
+                    <div class="or-using">Ou use as seguintes redes:</div>
+                    <div class="social-login">
+                        <a href="#" class="social-facebook"><i class="fa fa-facebook"></i>Facebook</a>
+                        <a href="#" class="social-google"><i class="fa fa-google"></i>Google</a>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div><!-- End Login Modal -->
+</form>
+    <!-- Inicio do Formulario de agendamento via cliente -->
+    <div id="appointment" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h5 class="modal-title">Agendamento</h5>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="appointment-error"></div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
+                                <i class="fa fa-user-o"></i>
+                                <input class="mdl-textfield__input" type="text" pattern="[A-Z,a-z, ]*" id="appointment-name">
+                                <label class="mdl-textfield__label" for="appointment-name">Nome</label>
+                                <span class="mdl-textfield__error">Insira um email valido</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
+                                <i class="fa fa-envelope-o"></i>
+                                <input class="mdl-textfield__input" type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" id="appointment-email">
+                                <label class="mdl-textfield__label" for="appointment-email">Email</label>
+                                <span class="mdl-textfield__error">Insira um email valido</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
+                                <i class="fa fa-phone"></i>
+                                <input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="appointment-mobile">
+                                <label class="mdl-textfield__label" for="appointment-mobile">Numero</label>
+                                <span class="mdl-textfield__error">Please Enter Valid Mobile Number!</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mdl-selectfield mdl-js-selectfield mdl-selectfield--floating-label form-input-icon">
+                                <i class="fa fa-hospital-o"></i>
+                                <select class="mdl-selectfield__select" id="appointment-department">
+                                    <option value="">&nbsp;</option>
+                                    <option value="1">Ginecologista</option>
+                                    <option value="2">Ortopedista</option>
+                                    
+                                </select>
+                                <label class="mdl-selectfield__label" for="appointment-department">Escolha</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mdl-selectfield mdl-js-selectfield mdl-selectfield--floating-label form-input-icon">
+                                <i class="fa fa-user-md"></i>
+                                <select class="mdl-selectfield__select" id="appointment-doctor">
+                                    <option value="">&nbsp;</option>
+                                    <option value="1">Dr. Danielzin</option>
+                                    <option value="2">Dr. Duduzin t.i</option>
+                                    
+                                </select>
+                                <label class="mdl-selectfield__label" for="appointment-doctor">Escolha o doutor</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
+                                <i class="fa fa-calendar-o"></i>
+                                <input class="mdl-textfield__input" type="text" id="appointment-date" onfocus="(this.type='date')" onblur="(this.type='text')">
+                                <label class="mdl-textfield__label" for="appointment-date">Data</label>
+                                <span class="mdl-textfield__error">Please Enter Valid Date Number!</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center pt-4">
+                        <button class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect mdl-button--raised button button-primary button-lg make-appointment">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Fixed Appointment Button at Bottom -->
+    <div id="appointment-button" class="animated fadeInUp">
+        <button id="appointment-now" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-button--raised"><i class="fa fa-plus"></i></button>
+        <div class="mdl-tooltip mdl-tooltip--top" data-mdl-for="appointment-now">Make An Appointment</div>
+    </div>
+
+    <br>
+    <!-- Rodapé start -->
+    <footer id="footer">
+        <div class="layer-stretch">
+            <!-- Rodapé Start 2 -->
+            <div class="row layer-wrapper">
+                <div class="col-md-4 footer-block">
+                    <div class="footer-ttl"><p>Contato</p></div>
+                    <div class="footer-container footer-a">
+                        <div class="tbl">
+                            <div class="tbl-row">
+                                <div class="tbl-cell"><i class="fa fa-map-marker"></i></div>
+                                <div class="tbl-cell">
+                                    <p class="paragraph-medium paragraph-white">
+                                        Nome da clínica<br />
+                                        Nome da rua, numero <br />
+                                        Cidade/estado, cep.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="tbl-row">
+                                <div class="tbl-cell"><i class="fa fa-phone"></i></div>
+                                <div class="tbl-cell">
+                                    <p class="paragraph-medium paragraph-white">1111111111</p>
+                                </div>
+                            </div>
+                            <div class="tbl-row">
+                                <div class="tbl-cell"><i class="fa fa-envelope"></i></div>
+                                <div class="tbl-cell">
+                                    <p class="paragraph-medium paragraph-white">danielborba@gmail.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 footer-block">
+                    <div class="footer-ttl"><p>Links Rápidos</p></div>
+                    <div class="footer-container footer-b">
+                        <div class="tbl">
+                            <div class="tbl-row">
+                                <ul class="tbl-cell">
+                                    <li><a href="#">Início da página</a></li>
+                                    <li><a href="#">Início da página</a></li>
+                                    <li><a href="#">Início da página</a></li>
+                                </ul>
+                                <ul class="tbl-cell">
+                                    <li><a href="#">Login</a></li>
+                                    <li><a href="#">Login</a></li>
+                                    <li><a href="#">Login</a></li>
+                                    
+                        
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 footer-block">
+                    <div class="footer-ttl"><p>Redes sociais</p></div>
+                    <div class="footer-container footer-c">
+                       
+                        <ul class="social-list social-list-colored footer-social">
+                            <li>
+                                <a href="#" target="_blank" id="footer-google" class="fa fa-google"></a>
+                                <span class="mdl-tooltip mdl-tooltip--top" data-mdl-for="footer-google">Google</span>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank" id="footer-instagram" class="fa fa-instagram"></a>
+                                <span class="mdl-tooltip mdl-tooltip--top" data-mdl-for="footer-instagram">Instagram</span>
+                            </li>
+                        
+                            <li>
+                                <a href="#" target="_blank" id="footer-linkedin" class="fa fa-github"></a>
+                                <span class="mdl-tooltip mdl-tooltip--top" data-mdl-for="footer-github">Github</span>
+                            </li>
+                           
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div><!-- End main Footer Section -->
+        <!-- Start Copyright Section -->
+        <div id="copyright">
+            <div class="layer-stretch">
+                <div class="paragraph-medium paragraph-white">2023 © CodeDan todos direitos reservados.</div>
+            </div>
+        </div><!-- End of Copyright Section -->
+    </footer><!-- End of Footer Section -->
+
+    <!-- **********Included Scripts*********** -->
+
+    <!-- Jquery Library 2.1 JavaScript-->
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <!-- Popper JavaScript-->
+    <script src="js/popper.min.js"></script>
+    <!-- Bootstrap Core JavaScript-->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Material Design Lite JavaScript-->
+    <script src="js/material.min.js"></script>
+    <!-- Material Select Field Script -->
+    <script src="js/mdl-selectfield.min.js"></script>
+    <!-- Flexslider Plugin JavaScript-->
+    <script src="js/jquery.flexslider.min.js"></script>
+    <!-- Owl Carousel Plugin JavaScript-->
+    <script src="js/owl.carousel.min.js"></script>
+    <!-- Scrolltofixed Plugin JavaScript-->
+    <script src="js/jquery-scrolltofixed.min.js"></script>
+    <!-- Magnific Popup Plugin JavaScript-->
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <!-- WayPoint Plugin JavaScript-->
+    <script src="js/jquery.waypoints.min.js"></script>
+    <!-- CounterUp Plugin JavaScript-->
+    <script src="js/jquery.counterup.js"></script>
+    <!-- SmoothScroll Plugin JavaScript-->
+    <script src="js/smoothscroll.min.js"></script>
+    <!--Custom JavaScript for Klinik Template-->
+    <script src="js/custom.js"></script>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-93901876-1', 'auto');
+        ga('send', 'pageview');
+    </script>
 </body>
 </html>
