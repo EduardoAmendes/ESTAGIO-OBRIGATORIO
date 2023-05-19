@@ -1,3 +1,7 @@
+<?php
+include_once('config/conexao.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +11,7 @@
 	<!-- Boxicons -->
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 	<!-- My CSS -->
-	<link rel="stylesheet" href="./css/admin.css">
+	<link rel="stylesheet" href="../css/admin.css">
 
 	<title>Painel Agendamento</title>
 </head>
@@ -17,25 +21,25 @@
 	<!-- SIDEBAR -->
 	<section id="sidebar">
         <br>
-		<a href="#" class="brand">
+		<a href="agendamentos.php" class="brand">
 			<i class='bx bx-plus-medical'></i>
 			<span class="text">Sistema de agendamentos</span>
 		</a>
 		<ul class="side-menu top">
 			<li class="active">
-				<a href="#">
+				<a href="agendamentos.php">
 					<i class='bx bxs-calendar' ></i>
 					<span class="text">Consultas agendadas</span>
 				</a>
 			</li>
 			<li>
-				<a href="consultas.html">
+				<a href="consultas.php">
 					<i class='bx bxs-calendar-edit' ></i>
 					<span class="text">Agendar consultas</span>
 				</a>
 			</li>
 			<li>
-				<a href="#">
+				<a href="medicos.php">
 					<i class='bx bx-plus-medical' ></i>
 					<span class="text">Equipe de médicos </span>
 				</a>
@@ -91,7 +95,7 @@
 		<main>
 			<div class="head-title">
 				<div class="left">
-					<h1>Status de agendamentos</h1>
+					<h1>Médicos</h1>
 					<ul class="breadcrumb">
 						<li>
 							<a href="#">Painel Administrativo</a>
@@ -117,35 +121,39 @@
 					<table>
 						<thead>
 							<tr>
-								<th>Medico</th>
-								<th>Data</th>
-								<th>Status</th>
+								<th>ID</th>
+								<th>NOME</th>
+								<th>FUNÇÃO</th>
+								<th>CRM</th>
+								<th>CRN</th>
+								<th>UF</th>
+								<th></th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
-								<td>
-									<img src="img/people.png">
-									<p>Dr.Daniel</p>
-								</td>
-								<td>20-05-2023 / 10:00</td>
-								<td><span class="status completed">Confirmado</span></td>
-							</tr>
-							<tr>
-								<td>
-									<img src="img/people.png">
-									<p>Dr.Eduardo</p>
-								</td>
-								<td>20-05-2023 / 11:00</td>
-								<td><span class="status pending">Desmarcado</span></td>
-							</tr>
-							<tr>
-								<td>
-									<img src="img/people.png">
-									<p>Dra. Lais</p>
-								</td>
-								<td>21-05-2023 / 08:00</td>
-								<td><span class="status process">Processando</span></td>
+							<?php
+                    //consultar no banco de dados
+                    $verifica = mysqli_query($mysqli_connection, 
+                    "SELECT * FROM tblMEDICO ORDER BY NOME_MEDICO") ;
+
+                    //Verificar se encontrou resultado na tabela "usuarios"
+                    if(($verifica ) AND ($verifica->num_rows != 0)){
+                        while($row_usuario = mysqli_fetch_assoc($verifica)){
+                            echo '<tr>';
+                            echo '<th>'. $row_usuario['ID'] .'</th>';
+                            echo '<td>'. $row_usuario['NOME_MEDICO'] .'</td>';
+                            echo '<td>'. $row_usuario['FUNCAO_MEDICO'] .'</td>';
+                            echo '<td>'. $row_usuario['CRM_MEDICO'] .'</td>';
+                            echo '<td>'. $row_usuario['CRN_MEDICO'] .'</td>';
+                            echo '<td>'. $row_usuario['CRM_MEDICO_UF'] .'</td>';
+                            echo '<td></td>';
+                            echo '</tr>';
+                        }
+                    }else{
+                        echo "Nenhum usuário encontrado";
+                    }
+                    ?>
 							</tr>
 						</tbody>
 					</table>
