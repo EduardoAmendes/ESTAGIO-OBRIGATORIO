@@ -54,7 +54,7 @@ include_once('../config/conexao.php');
 		      	<div class="icon d-flex align-items-center justify-content-center">
 		      		<span class="fa fa-user-o"></span>
 		      	</div>
-						<form method="POST" name="" action="frmInsertMedico.php" class="">
+			<form method="POST" name="" action="frmInsertMedico.php" class="">
 
 		      		<div class="form-group">
                         Nome:

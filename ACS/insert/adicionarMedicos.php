@@ -12,7 +12,6 @@ include_once('config/conexao.php');
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 	<!-- My CSS -->
 	<link rel="stylesheet" href="../css/admin.css">
-	<link rel="stylesheet" href="../css/style.css">
 
 	<title>Painel Agendamento</title>
 </head>
@@ -96,7 +95,7 @@ include_once('config/conexao.php');
 		<main>
 			<div class="head-title">
 				<div class="left">
-					<h1>Consultas</h1>
+					<h1>Médicos</h1>
 					<ul class="breadcrumb">
 						<li>
 							<a href="#">Painel Administrativo</a>
@@ -110,7 +109,7 @@ include_once('config/conexao.php');
 				</a>
                 --->
 			</div>
-		
+
 
 			<div class="table-data">
 				<div class="order">
@@ -120,61 +119,43 @@ include_once('config/conexao.php');
 						<i class='bx bx-filter' ></i>
 					</div>
 					<table>
+						<thead>
+							<tr>
+								<th>ID</th>
+								<th>NOME</th>
+								<th>FUNÇÃO</th>
+								<th>CRM</th>
+								<th>CRN</th>
+								<th>UF</th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+							<?php
+                    //consultar no banco de dados
+                    $verifica = mysqli_query($mysqli_connection, 
+                    "SELECT * FROM tblMEDICO ORDER BY NOME_MEDICO") ;
 
-
-					<div class="row justify-content-center">
-				<div class="col-md-6 col-lg-5">
-					<div class="login-wrap p-4 p-md-5">
-		      	<div class="icon d-flex align-items-center justify-content-center">
-		      		<span class="fa fa-user-o"></span>
-		      	</div>
-						<form method="POST" name="" action="insert/inserirAgenda.php" class="">
-
-		      		<div class="form-group">
-                        Nome:
-                        <?php 
-                            $SQL = "SELECT NOME_MEDICO FROM tblMEDICO ORDER BY NOME_MEDICO";
-                            $QUERY  = mysqli_query($mysqli_connection, $SQL);
-                        
-                        ?>
-                        <select name="NOME" class="form-control rounded-left" placeholder="NOME" required>
-
-                        <?php
-
-                            while($RESULTADO = mysqli_fetch_array($QUERY)){ 
-                                
-                        ?>
-                        
-
-                        <option value="
-                        <?=  $RESULTADO['NOME_MEDICO'] ?>">
-                        
-                        <?php echo $RESULTADO['NOME_MEDICO']; ?>
-                    </option>
-                  <?php } ?>
-                        </option>
-
-                        </select>
-		      		</div>
-                      Data:
-                      <div class="form-group">
-		      			<input name="DATA" type="date" class="form-control rounded-left" required>
-		      		</div>
-                      Hora:
-                      <div class="form-group">
-		      			<input name="HORA" type="time" class="form-control rounded-left" placeholder="HORA" required>
-		      		</div>
-
-	            <div class="form-group d-md-flex">
-	            	<div class="w-50">
-								</div>
-	            </div>
-	            <div class="form-group">
-	            	<button value="InserirAgenda" name="InserirAgenda" type="submit" class="btn btn-primary rounded submit p-3 px-5">AGENDAR</button>
-	            </div>
-	          </form>
-
-                        <!-- -->
+                    //Verificar se encontrou resultado na tabela "usuarios"
+                    if(($verifica ) AND ($verifica->num_rows != 0)){
+                        while($row_usuario = mysqli_fetch_assoc($verifica)){
+                            echo '<tr>';
+                            echo '<th>'. $row_usuario['ID'] .'</th>';
+                            echo '<td>'. $row_usuario['NOME_MEDICO'] .'</td>';
+                            echo '<td>'. $row_usuario['FUNCAO_MEDICO'] .'</td>';
+                            echo '<td>'. $row_usuario['CRM_MEDICO'] .'</td>';
+                            echo '<td>'. $row_usuario['CRN_MEDICO'] .'</td>';
+                            echo '<td>'. $row_usuario['CRM_MEDICO_UF'] .'</td>';
+                            echo '<td></td>';
+                            echo '</tr>';
+                        }
+                    }else{
+                        echo "Nenhum usuário encontrado";
+                    }
+                    ?>
+							</tr>
+						</tbody>
 					</table>
 				</div>
 			</div>
