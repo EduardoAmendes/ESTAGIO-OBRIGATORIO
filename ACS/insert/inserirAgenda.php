@@ -15,10 +15,10 @@ if (isset($_POST['InserirAgenda'])){
     )";
     mysqli_query($mysqli_connection, $insertMedico);
     echo"<script language='javascript' type='text/javascript'> alert('MEDICO AGENDADO') </script>";
-    header('location:../agendamentos.php') ;               
+    header('location:../consultas.php') ;               
  } else {
     echo"<script language='javascript' type='text/javascript'> alert('MEDICO NÃO AGENDADO') </script>";
-    header('location:../agendamentos.php') ;    
+    header('location:../consultas.php') ;    
  }
                     
 

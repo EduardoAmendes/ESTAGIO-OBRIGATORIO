@@ -21,7 +21,7 @@ if (isset($entrar)) {
         echo"<script language='javascript' type='text/javascript'>
         alert('Login correto');</script>";
         setcookie("login",$login);
-        header("Location:../agendamentos.php");
+        header("Location:../consultas.php");
       }
     }
 

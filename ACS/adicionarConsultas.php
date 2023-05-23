@@ -18,32 +18,43 @@ include_once('config/conexao.php');
 <body>
 
 
-	<!-- SIDEBAR -->
-	<section id="sidebar">
+
+		<!-- SIDEBAR -->
+		<section id="sidebar">
         <br>
-		<a href="agendamentos.php" class="brand">
+		<a href="consultas.php" class="brand">
 			<i class='bx bx-plus-medical'></i>
 			<span class="text">Sistema de agendamentos</span>
 		</a>
 		<ul class="side-menu top">
 			<li class="active">
-				<a href="agendamentos.php">
+				<a href="consultas.php">
 					<i class='bx bxs-calendar' ></i>
 					<span class="text">Consultas agendadas</span>
 				</a>
 			</li>
 			<li>
-				<a href="consultas.php">
+				<a href="adicionarConsultas.php" id="agendar-consultas">
 					<i class='bx bxs-calendar-edit' ></i>
 					<span class="text">Agendar consultas</span>
 				</a>
 			</li>
 			<li>
-				<a href="medicos.php">
+				<a href="medicos.php" id="equipe-medicos">
 					<i class='bx bx-plus-medical' ></i>
 					<span class="text">Equipe de médicos </span>
 				</a>
-			</li>
+                <ul>
+                    <li>
+                        <a href="adicionarMedicos.php" id="submenu-medicos" style="display: none;">
+                            <i class="bx bx-plus-medical">
+                                <span class="text">Adicionar médico</span>
+                            </i>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            
 		</ul>
         
 		<ul class="side-menu">
@@ -95,12 +106,7 @@ include_once('config/conexao.php');
 		<main>
 			<div class="head-title">
 				<div class="left">
-					<h1>Médicos</h1>
-					<ul class="breadcrumb">
-						<li>
-							<a href="#">Painel Administrativo</a>
-						</li>
-					</ul>
+					<h1>Agendar Consultas</h1>
 				</div>
 				<!---BAIXAR PDF 
                     <a href="#" class="btn-download">
@@ -109,63 +115,168 @@ include_once('config/conexao.php');
 				</a>
                 --->
 			</div>
+            <div class="wrapper">
+        <h2>Agendar consultas</h2>
+        <form method="POST" action="insert/inserirAgenda.php">
+        <div class="input-box">
+                        <?php 
+                            $SQL = "SELECT NOME_MEDICO FROM tblMEDICO ORDER BY NOME_MEDICO";
+                            $QUERY  = mysqli_query($mysqli_connection, $SQL);
+                        
+                        ?>
+            <select name="NOME" class="input-box" placeholder="NOME" required>
+
+                        <?php
+
+                            while($RESULTADO = mysqli_fetch_array($QUERY)){ 
+                                
+                        ?>
+                        
+
+                    <option value="
+                        <?=  $RESULTADO['NOME_MEDICO'] ?>">
+                        
+                        <?php echo $RESULTADO['NOME_MEDICO']; ?>
+
+             
+                  <?php } ?>
+
+            </select>
+        </option>
 
 
-			<div class="table-data">
-				<div class="order">
-					<div class="head">
-						<h3>Gestão de fluxo</h3>
-						<i class='bx bx-search' ></i>
-						<i class='bx bx-filter' ></i>
-					</div>
-					<table>
-						<thead>
-							<tr>
-								<th>ID</th>
-								<th>NOME</th>
-								<th>FUNÇÃO</th>
-								<th>CRM</th>
-								<th>CRN</th>
-								<th>UF</th>
-								<th></th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-							<?php
-                    //consultar no banco de dados
-                    $verifica = mysqli_query($mysqli_connection, 
-                    "SELECT * FROM tblMEDICO ORDER BY NOME_MEDICO") ;
+            <div class="input-box">
+                <input type="date" placeholder="Data" required>
+            </div>
 
-                    //Verificar se encontrou resultado na tabela "usuarios"
-                    if(($verifica ) AND ($verifica->num_rows != 0)){
-                        while($row_usuario = mysqli_fetch_assoc($verifica)){
-                            echo '<tr>';
-                            echo '<th>'. $row_usuario['ID'] .'</th>';
-                            echo '<td>'. $row_usuario['NOME_MEDICO'] .'</td>';
-                            echo '<td>'. $row_usuario['FUNCAO_MEDICO'] .'</td>';
-                            echo '<td>'. $row_usuario['CRM_MEDICO'] .'</td>';
-                            echo '<td>'. $row_usuario['CRN_MEDICO'] .'</td>';
-                            echo '<td>'. $row_usuario['CRM_MEDICO_UF'] .'</td>';
-                            echo '<td></td>';
-                            echo '</tr>';
-                        }
-                    }else{
-                        echo "Nenhum usuário encontrado";
-                    }
-                    ?>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-			</div>
+            <div class="input-box">
+                <input type="time" placeholder="Hora" required>
+            </div>
+
+            <div class="input-box button">
+                <input type="submit" value="Cadastrar">
+            </div>
+        </form>
+    </div>
+            </div>
 		</main>
 		<!-- MAIN -->
 	</section>
 	<!-- CONTENT -->
-	
+	<style>
+        @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins';
+    }
+    .wrapper{
+      display: flex;
+      flex-direction: column;
+      height: 500px;
+      position: relative;
+      max-width: 480px;
+      width: 100%;
+      background: #fff;
+      padding: 34px;
+      border-radius: 6px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    }
+    .wrapper h2{
+      position: relative;
+      font-size: 22px;
+      font-weight: 600;
+      color: #333;
+    }
+    .wrapper h2::before{
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 3px;
+      width: 28px;
+      border-radius: 12px;
+      background: #4070f4;
+    }
+    .wrapper form {
+        margin-top: 30px;
+    }
+    
+    .wrapper form .input-box{
+        height: 52px;
+        margin: 18px 0;
+    }
+    
+    form .input-box input{
+      height: 100%;
+      width: 100%;
+      outline: none;
+      padding: 0 15px;
+      font-size: 17px;
+      font-weight: 400;
+      color: #333;
+      border: 1.5px solid #C7BEBE;
+      border-bottom-width: 2.5px;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+    }
+    
+    .input-box input:focus,
+    .input-box input:valid{
+        border-color: #4070f4;
+    }
+    
+    form h3 {
+        color: #707070;
+        font-size: 14px;
+        font-weight: 500;
+        margin-left: 10px;
+    }
+    
+    .input-box.button input {
+        color: #fff;
+        letter-spacing: 1px;
+    }
+    
+    .input-box.input-box.button input {
+        color: #fff;
+        letter-spacing: 1px;
+        border: none;
+        background: #4070f4;
+        cursor: pointer;
+    }
+    
+    .input-box.button input:hover {
+        background: #0e4bf1;
+    }
+    
+    form .text h3 {
+        color: #333;
+        width: 100%;
+        text-align: center;
+    }
+    form .text h3 a{
+        text-decoration: none;
+    }
+    
+    form .text h3 a:hover{
+        text-decoration: underline;
+    }
+    
+    </style>
 
 	<script>
+    document.getElementById('equipe-medicos').addEventListener('click', function() {
+        var submenu = document.getElementById('submenu-medicos');
+        if(submenu.style.display === 'none' ) {
+            submenu.style.display = 'block';
+        } else {
+            submenu.style.display = 'none';
+        }
+
+    });
     const allSideMenu = document.querySelectorAll('#sidebar .side-menu.top li a');
 
         allSideMenu.forEach(item=> {

@@ -14,7 +14,7 @@ if (isset($_POST['cadastro'])){
     FUNCAO_MEDICO, CRM_MEDICO_UF, CRM_MEDICO, CRN_MEDICO) VALUES(NULL, '$NOME_MEDICO', '$FUNCAO_MEDICO', '$CRM_MEDICO_UF', '$CRM_MEDICO', '$CRN_MEDICO')";
     mysqli_query($mysqli_connection, $insertMedico);
     echo"<script language='javascript' type='text/javascript'> alert('MEDICO CADASTRADO');</script>";
-    header('location:frmMedico.php') ;                        
+    header('location:../medicos.php') ;                        
  }
                     
 

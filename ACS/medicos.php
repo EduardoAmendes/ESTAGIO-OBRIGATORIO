@@ -18,32 +18,44 @@ include_once('config/conexao.php');
 <body>
 
 
-	<!-- SIDEBAR -->
-	<section id="sidebar">
+
+		<!-- SIDEBAR -->
+		<section id="sidebar">
         <br>
-		<a href="agendamentos.php" class="brand">
+		<a href="consultas.php" class="brand">
 			<i class='bx bx-plus-medical'></i>
 			<span class="text">Sistema de agendamentos</span>
 		</a>
 		<ul class="side-menu top">
 			<li class="active">
-				<a href="agendamentos.php">
+				<a href="consultas.php">
 					<i class='bx bxs-calendar' ></i>
 					<span class="text">Consultas agendadas</span>
 				</a>
 			</li>
 			<li>
-				<a href="consultas.php">
+				<a href="adicionarConsultas.php" id="agendar-consultas">
 					<i class='bx bxs-calendar-edit' ></i>
 					<span class="text">Agendar consultas</span>
 				</a>
 			</li>
 			<li>
-				<a href="medicos.php">
+				<a href="medicos.php" id="equipe-medicos">
 					<i class='bx bx-plus-medical' ></i>
 					<span class="text">Equipe de médicos </span>
 				</a>
 			</li>
+                <ul>
+                    <li>
+                        <a href="adicionarMedicos.php" id="submenu-medicos" style="display: none;">
+                            <i class="bx bx-plus-medical">
+                                <span class="text">Adicionar médico</span>
+                            </i>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            
 		</ul>
         
 		<ul class="side-menu">
@@ -98,7 +110,7 @@ include_once('config/conexao.php');
 					<h1>Médicos</h1>
 					<ul class="breadcrumb">
 						<li>
-							<a href="#">Painel Administrativo</a>
+							<a href="#">Nossa equipe de médicos</a>
 						</li>
 					</ul>
 				</div>

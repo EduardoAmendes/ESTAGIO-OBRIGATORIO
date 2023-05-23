@@ -1,5 +1,4 @@
 <?php
-
 include_once('config/conexao.php');
 ?>
 
@@ -19,32 +18,43 @@ include_once('config/conexao.php');
 <body>
 
 
-	<!-- SIDEBAR -->
-	<section id="sidebar">
+
+		<!-- SIDEBAR -->
+		<section id="sidebar">
         <br>
-		<a href="agendamentos.php" class="brand">
+		<a href="consultas.php" class="brand">
 			<i class='bx bx-plus-medical'></i>
 			<span class="text">Sistema de agendamentos</span>
 		</a>
 		<ul class="side-menu top">
 			<li class="active">
-				<a href="agendamentos.php">
+				<a href="consultas.php">
 					<i class='bx bxs-calendar' ></i>
 					<span class="text">Consultas agendadas</span>
 				</a>
 			</li>
 			<li>
-				<a href="consultas.php">
+				<a href="adicionarConsultas.php" id="agendar-consultas">
 					<i class='bx bxs-calendar-edit' ></i>
 					<span class="text">Agendar consultas</span>
 				</a>
 			</li>
 			<li>
-				<a href="medicos.php">
+				<a href="medicos.php" id="equipe-medicos">
 					<i class='bx bx-plus-medical' ></i>
 					<span class="text">Equipe de médicos </span>
 				</a>
-			</li>
+                <ul>
+                    <li>
+                        <a href="adicionarMedicos.php" id="submenu-medicos" style="display: none;">
+                            <i class="bx bx-plus-medical">
+                                <span class="text">Adicionar médico</span>
+                            </i>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            
 		</ul>
         
 		<ul class="side-menu">
@@ -96,12 +106,7 @@ include_once('config/conexao.php');
 		<main>
 			<div class="head-title">
 				<div class="left">
-					<h1>Status de agendamentos</h1>
-					<ul class="breadcrumb">
-						<li>
-							<a href="#">Painel Administrativo</a>
-						</li>
-					</ul>
+					<h1>Adcionar médicos</h1>
 				</div>
 				<!---BAIXAR PDF 
                     <a href="#" class="btn-download">
@@ -110,59 +115,148 @@ include_once('config/conexao.php');
 				</a>
                 --->
 			</div>
-
-
-			<div class="table-data">
-				<div class="order">
-					<div class="head">
-						<h3>Gestão de fluxo</h3>
-						<i class='bx bx-search' ></i>
-						<i class='bx bx-filter' ></i>
-					</div>
-					<table>
-						<thead>
-							<tr>
-								<th>Medico</th>
-								<th>Data</th>
-								<th>Hora</th>
-								<th>Status</th>
-
-							</tr>
-						</thead>
-							<tbody>
-							<tr>
-						<?php
-                    //consultar no banco de dados
-                    $verifica = mysqli_query($mysqli_connection, 
-                    "SELECT * FROM tblAGENDA ORDER BY DATA_AGENDAMENTO DESC") ;
-
-                    //Verificar se encontrou resultado na tabela "usuarios"
-                    if(($verifica ) AND ($verifica->num_rows != 0)){
-                        while($row_usuario = mysqli_fetch_assoc($verifica)){
-                            echo '<tr>';
-                            echo '<th>'. $row_usuario['NOME_MEDICO'] .'</th>';
-                            echo '<td>'. $row_usuario['DATA_AGENDAMENTO'] .'</td>';
-                            echo '<td>'. $row_usuario['HORA_AGENDAMENTO'] .'</td>';
-							//echo '<td class="bg-gradient">'. $row_usuario['STATUS_AGENDAMENTO'] .'</td>';
-                            echo '<td></td>';
-                            echo '</tr>';
-                        }
-                    }else{
-                        echo "Nenhum usuário encontrado";
-                    }
-                    ?>
-						</tr>
-						</tbody>
-					</table>
-				</div>
-			</div>
+            <div class="wrapper">
+                <h2>Adicionar Médico</h2>
+                <form method="POST" action="insert/inserirMedico.php">
+                    <div class="input-box">
+                        <input name="NOME" type="text" placeholder="Nome do médico" required>
+                    </div>
+                    <div class="input-box">
+                        <input name="FUNCAO" type="text" placeholder="Funcao" required>
+                    </div>
+                    <div class="input-box">
+                        <input name="UF" type="text" placeholder="UF" required>
+                    </div>
+                    
+                    <div class="input-box">
+                        <input name="CRN" type="text" placeholder="CRN">
+                    </div><div class="input-box">
+                    <div class="input-box">
+                        <input name="CRM" type="text" placeholder="CRM">
+                    </div><div class="input-box">
+                    <div class="input-box button">
+                        <input name="cadastro" type="submit" value="Cadastrar">
+                    </div>
+                </form>
+            </div>
 		</main>
 		<!-- MAIN -->
 	</section>
 	<!-- CONTENT -->
-	
+	<style>
+        @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins';
+    }
+    .wrapper{
+      display: flex;
+      flex-direction: column;
+      height: 500px;
+      position: relative;
+      max-width: 480px;
+      width: 100%;
+      background: #fff;
+      padding: 34px;
+      border-radius: 6px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    }
+    .wrapper h2{
+      position: relative;
+      font-size: 22px;
+      font-weight: 600;
+      color: #333;
+    }
+    .wrapper h2::before{
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 3px;
+      width: 28px;
+      border-radius: 12px;
+      background: #4070f4;
+    }
+    .wrapper form {
+        margin-top: 30px;
+    }
+    
+    .wrapper form .input-box{
+        height: 52px;
+        margin: 18px 0;
+    }
+    
+    form .input-box input{
+      height: 100%;
+      width: 100%;
+      outline: none;
+      padding: 0 15px;
+      font-size: 17px;
+      font-weight: 400;
+      color: #333;
+      border: 1.5px solid #C7BEBE;
+      border-bottom-width: 2.5px;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+    }
+    
+    .input-box input:focus,
+    .input-box input:valid{
+        border-color: #4070f4;
+    }
+    
+    form h3 {
+        color: #707070;
+        font-size: 14px;
+        font-weight: 500;
+        margin-left: 10px;
+    }
+    
+    .input-box.button input {
+        color: #fff;
+        letter-spacing: 1px;
+    }
+    
+    .input-box.input-box.button input {
+        color: #fff;
+        letter-spacing: 1px;
+        border: none;
+        background: #4070f4;
+        cursor: pointer;
+    }
+    
+    .input-box.button input:hover {
+        background: #0e4bf1;
+    }
+    
+    form .text h3 {
+        color: #333;
+        width: 100%;
+        text-align: center;
+    }
+    form .text h3 a{
+        text-decoration: none;
+    }
+    
+    form .text h3 a:hover{
+        text-decoration: underline;
+    }
+    
+    </style>
 
 	<script>
+    document.getElementById('equipe-medicos').addEventListener('click', function() {
+        var submenu = document.getElementById('submenu-medicos');
+        if(submenu.style.display === 'none' ) {
+            submenu.style.display = 'block';
+        } else {
+            submenu.style.display = 'none';
+        }
+
+    });
     const allSideMenu = document.querySelectorAll('#sidebar .side-menu.top li a');
 
         allSideMenu.forEach(item=> {
